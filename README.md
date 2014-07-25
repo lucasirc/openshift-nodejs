@@ -1,22 +1,31 @@
 openshift-nodejs
 ================
 
-Source Code:
 
+xxxSourceCodeOpenShift: Source Code ssh url, check in application -> Source Code
+xxxRepository: name of the repository
+
+`Add OpenShift Repository as remote`
 git remote add xxxRepository  xxxSourceCodeOpenShift
 
+`Fetch and Merge with Openshift Repository`
 git pull xxxRepository master
 
-git checkout --ours .
+Resolve merge:
+`git checkout --ours .`
 
-git add .
+Add changes
+`git add .`
 
-git commit -m"Link repo local with remote OpenShift "
+Add commit
+`git commit -m"Link repo local with remote OpenShift "`
 
-git push xxxRepository master
+Push to Open Shift Repository and Wait the Deploy
+`git push xxxRepository master`
 
-#msg success: remote: Deployment completed with status: success
+
+msg success: remote: Deployment completed with status: success
 
 
-#check server log
+check server log
 rhc tail -a appName
