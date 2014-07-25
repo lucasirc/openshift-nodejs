@@ -7,6 +7,10 @@ app.get('/' , function(req , res) {
 	res.send("teste deploy node.js no openshift")
 });
 
-var server = app.listen(3000, function() {
+
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+console.log("ipAddress: " + ipaddress);
+var server = app.listen(port, function() {
     console.log('Listening on port %d', server.address().port);
 });
