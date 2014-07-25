@@ -9,8 +9,8 @@ app.get('/' , function(req , res) {
 
 
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
 console.log("ipAddress: " + ipaddress);
-var server = app.listen(port, function() {
+var server = app.listen(port, ipaddress,  function() {
     console.log('Listening on port %d', server.address().port);
 });
